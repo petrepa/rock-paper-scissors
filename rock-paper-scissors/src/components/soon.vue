@@ -44,7 +44,7 @@
     </div>
     <div class="container">
         <h1>🪨 📃 ✂️</h1>
-        <h2 style="text-align:center; color:#FAFAFA;">COMING SOMETIME<br>idk rly</h2>
+        <h2 style="text-align:center; color:#FAFAFA;">COMING SOMETIME<br>idk rly hehe</h2>
         <img style="width:90vw; max-height: 70vh;" class="construction-img" src="../assets/construction.svg"
             alt="Under construction" />
     </div>
