@@ -9,6 +9,9 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./rock-paper-scissors
 
     steps:
       - name: Checkout repo
