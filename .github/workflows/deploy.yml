@@ -22,6 +22,8 @@ jobs:
         with:
           node-version: 16
 
+      - uses: keita-hino/vue-tsc-action@main
+
       - name: Install dependencies
         uses: borales/actions-yarn@v4
         with:
