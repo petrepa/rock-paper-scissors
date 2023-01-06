@@ -2,7 +2,7 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: "Weapon Button",
+  name: "Chosen Weapon",
   props: {
     weapon: {
       type: Object,
@@ -18,7 +18,7 @@ export default defineComponent({
         {{  weapon.icon }}
       </div>
       <div v-else class="label">
-        {{ weapon.name }} hshs
+        {{ weapon.name }}
       </div>
     </div>
   </div>
@@ -41,17 +41,17 @@ export default defineComponent({
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    min-width: 5rem;
-    min-height: 5rem;
-    border: .2em solid c.$gray;
-    border-radius: 25%;
+    min-width: 10rem;
+    min-height: 10rem;
+    // border: .2em solid c.$gray;
     filter: drop-shadow(0 0 15px c.$gray) drop-shadow(0 0 50px c.$gray) contrast(2) brightness(2);
     transition: .5s;
     cursor: pointer;
     margin: .75em;
 
     &:hover {
-      outline: .2em solid c.$gray-lighter;
+      // border: .4em solid c.$gray-lighter;
+      scale: 1.2;
 
       .label {
         font-weight: bold;

@@ -1,8 +1,9 @@
 <template>
   <div>
     <div class="button-container">
+      <chosen-weapon v-if="weaponHasBeenSelected" :weapon="selectedWeapon"></chosen-weapon>
       <div class="button-group">
-        <weapon-button v-for="weapon in weapons" :key="weapon.name" :weapon="weapon"></weapon-button>
+        <weapon-button v-for="weapon in weapons" :key="weapon.name" :weapon="weapon" @click="chooseWeapon(weapon)"></weapon-button>
       </div>
     </div>
   </div>
@@ -30,6 +31,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import ChosenWeapon from './ChosenWeapon.vue';
 import WeaponButton from './WeaponButton.vue';
 
 interface Weapon {
@@ -39,7 +41,7 @@ interface Weapon {
 }
 
 export default defineComponent({
-  components: { WeaponButton },
+  components: { WeaponButton, ChosenWeapon },
   name: "PlayerCard",
   emits: ["chosenWeapon"],
   props: {
@@ -64,9 +66,18 @@ export default defineComponent({
       ]
     }
   },
+  data() {
+    return {
+      selectedWeapon: Object,
+      weaponHasBeenSelected: false,
+    }
+  },
   methods: {
-    chooseWeapon(weapon: string): Weapon {
-      this.chosenWeapon = weapon;
+    chooseWeapon(weapon: object): Weapon {
+      console.log("Chosen weapon: " + weapon.name);
+      this.weaponHasBeenSelected = true;
+      this.selectedWeapon = weapon;
+      this.$emit('chosenWeapon', weapon.name);
     },
   },
 });
