@@ -52,9 +52,6 @@
 </template>
 
 <style scoped>
-body {
-    font-family: "Merriweather Sans";
-}
 
 .container {
     height: 100%;

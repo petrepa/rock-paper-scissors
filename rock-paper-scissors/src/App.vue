@@ -1,24 +1,26 @@
 <script setup lang="ts">
-import soon from './components/soon.vue';
+import Background from './components/Background.vue';
+import Header from './components/Header.vue';
+import PlayerCard from './components/PlayerCard.vue';
 </script>
 
 <template>
   <div>
-    <soon></soon>
+    <Background style="z-index: -1;"/>
+
+    <Header title="rock paper scissors️"></Header>
+
+    <PlayerCard></PlayerCard>
   </div>
 
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
+<style lang="scss" scoped>
+@import url('https://fonts.googleapis.com/css?family=Orbitron');
+
+body {
+  font-family: "Orbitron";
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
+
+
 </style>
